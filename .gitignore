@@ -2,4 +2,7 @@
 .project
 .git
 .pydevproject
-
+virtualme/*
+.settings
+src/fixtures/*
+src/webapp/settings.py
