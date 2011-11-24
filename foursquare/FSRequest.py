@@ -55,7 +55,10 @@ class FSRequest(Http):
                 :returns: diccionario con el resultado
                 :raises: :class:`GPAPIError`
         """
-        from django.utils import simplejson
+        try:
+            import json as simplejson
+        except:
+            from django.utils import simplejson
         if language is not None:
             self.headers['Accept-Language'] = language
         response, content = self.request(url, method=method, body=body, headers=self.headers)
